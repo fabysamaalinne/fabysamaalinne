@@ -1,0 +1,138 @@
+<!DOCTYPE html> 
+
+<html lang="en"> 
+
+    <head> 
+
+      
+          <title>Calculadora</title>
+          
+           <style> 
+           
+           button
+           
+           { 
+
+            width: 25px;
+             height: 25px; 
+             border-radius: 100%; 
+     
+           }
+                
+                </style> 
+
+                <script>
+
+                 var n1 = 0; var n2 = 0; var operador = null; function btn_(parametro)
+                 
+                 { 
+                    let resultado = document.getElementById("resultado"); if (resultado.innerHTML == "0")
+                    
+                    { 
+                        
+                        resultado.innerHTML = parametro;
+                        
+                        }
+                        
+                        else
+                        
+                        { 
+                            
+                            resultado.innerHTML += parametro;
+                            
+                            } 
+                            
+                            } 
+                            
+                            function Somar()
+                            
+                            { 
+                                
+                                operador = "+"; n1 = Number(document.getElementById("resultado").innerHTML); document.getElementById("resultado").innerHTML = "0"; 
+                                
+                                } 
+                                
+                                function Subtracao()
+                
+                { 
+                    
+                    operador = "-"; n1 = Number(document.getElementById("resultado").innerHTML); document.getElementById("resultado").innerHTML = "0"; 
+                    
+                    }
+                    
+                    function Multiplicacao()
+                    
+                    {
+                         operador = "*"; n1 = Number(document.getElementById("resultado").innerHTML); document.getElementById("resultado").innerHTML = "0";
+                         
+                         } 
+                         
+                         function Divisao()
+                         
+                         { 
+                            
+                            operador = "/"; n1 = Number(document.getElementById("resultado").innerHTML); document.getElementById("resultado").innerHTML = "0"; 
+                            
+                            } 
+                            
+   function Limpar()
+                            
+  {
+                                
+ n1 = 0; n2 = 0; operador = null; document.getElementById("resultado").innerHTML = "0";
+                                
+} 
+                            
+function resultar()
+                                
+ { 
+                                    
+                                    n2 = Number(document.getElementById("resultado").innerHTML); let resultado = 0;
+                                    if (operador == "+") resultado = n1 + n2; 
+                                    else if (operador == "-") resultado = n1 - n2;
+                                     else if (operador == "*") resultado = n1 * n2; 
+                                    else if (operador == "/") resultado = n2 != 0 ? n1 / n2 : "Erro"; 
+                                    document.getElementById("resultado").innerHTML = resultado; operador = null; 
+                                    
+                                } 
+                                
+                                </script> 
+
+                                </head>
+
+                                 <body> 
+                                
+                            <p id="resultado">0</p>
+                            <button onclick="Limpar()">C</button>
+                            <button onclick="Divisao()">/</button>
+                            <button onclick="Multiplicacao()">*</button>
+                            <button onclick="resultar()">=</button>
+
+                                 </div>
+                                  <div> 
+                                                
+                            <button onclick="btn_(7)">7</button>
+                             <button onclick="btn_(8)">8</button> 
+                             <button onclick="btn_(9)">9</button>
+                            <button onclick="Subtracao()">-</button>
+
+                            </div> 
+                            <div> 
+                                                    
+                             <button onclick="btn_(4)">4</button>      
+                             <button onclick="btn_(5)">5</button>
+                             <button onclick="btn_(6)">6</button> 
+                             <button onclick="Somar()">+</button>
+                                                    
+                                </div>
+                                <div> 
+                                                        
+                               <button onclick="btn_(1)">1</button>
+                               <button onclick="btn_(2)">2</button>
+                               <button onclick="btn_(3)">3</button>
+                               <button onclick="btn_(0)">0</button> 
+                                                        
+                                 </div> 
+</body> 
+
+</html>
